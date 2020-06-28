@@ -6,17 +6,11 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/egeback/download_media_api/internal/actions"
+	"github.com/egeback/download_media_api/internal/models"
 	"github.com/gin-gonic/gin"
 )
 
-//Job ...
-type Job struct {
-	UUID     string
-	Download *actions.Downloader
-}
-
-var jobs = make(map[string]Job)
+var scheduler = models.NewScheduler()
 
 // AddJob ...
 func (c *Controller) AddJob(ctx *gin.Context) {
@@ -28,13 +22,14 @@ func (c *Controller) AddJob(ctx *gin.Context) {
 		return
 	}
 
-	download := actions.AddDownload(u)
+	download := models.AddDownload(u)
 	//download := actions.AddDownload("https://www.svtplay.se/video/21868842/palmegruppen-tar-langlunch")
 	//download := actions.AddDownload("https://www.svtplay.se/video/26987573/you-were-never-really-here")
-	download.Start()
+	//download.Start()
 	id := uuid.New()
 	uuid := id.String()
-	jobs[uuid] = Job{UUID: uuid, Download: &download}
+	//models.AddJob(models.Job{UUID: uuid, Download: &download})
+	scheduler.AddJob(models.Job{UUID: uuid, Download: &download})
 
 	ctx.JSON(http.StatusAccepted, gin.H{
 		"job_id": uuid,
@@ -44,24 +39,24 @@ func (c *Controller) AddJob(ctx *gin.Context) {
 
 //Jobs ...
 func (c *Controller) Jobs(ctx *gin.Context) {
-	retVal := make([]Job, 0, len(jobs))
-	for _, job := range jobs {
-		retVal = append(retVal, job)
-	}
-	ctx.JSON(http.StatusOK, retVal)
+	//retVal := make([]models.Job, 0, len(models.AllJobs()))
+	//for _, job := range models.AllJobs() {
+	//	retVal = append(retVal, job)
+	//}
+	ctx.JSON(http.StatusOK, scheduler.GetJobs())
 }
 
 //GetJob ...
 func (c *Controller) GetJob(ctx *gin.Context) {
 	uuid := ctx.Param("uuid")
 
-	_, exists := jobs[uuid]
+	_, exists := models.AllJobs()[uuid]
 	if !exists {
 		//ctx.JSON(http.StatusNotFound, gin.H{})
 		c.createErrorResponse(ctx, http.StatusNotFound, 101, "job id does not exist")
 		return
 	}
 
-	ctx.JSON(http.StatusAccepted, jobs[uuid])
+	ctx.JSON(http.StatusAccepted, models.AllJobs()[uuid])
 	return
 }

@@ -1,9 +1,17 @@
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/egeback/download_media_api v0.0.0-20200622165410-818df93be324 h1:qsrfHdoPZGSOsa1oxISZulWrkKv8leOS0Rp9XR4gvTA=
+github.com/egeback/download_media_api/internal v0.0.0-20200622165410-818df93be324 h1:P+zRyszF63dSqvk53VvohSqJu7Xe3IG2vRWJjXXuuwc=
+github.com/egeback/download_media_api/internal/actions v0.0.0-20200622165410-818df93be324 h1:8KTog9XIFQpF+Ueva3C/d5wcFXmjmbufHTHsX2zgz8E=
+github.com/egeback/download_media_api/internal/actions v0.0.0-20200622165410-818df93be324/go.mod h1:uFNH7tcT4JGauPXdhZJrq0b0VfBEldV0v4I/M6y9SU4=
+github.com/egeback/download_media_api/internal/models v0.0.0-20200622165410-818df93be324 h1:mT5sxQP8smqoRlIKegZssuJymQcB2zAPIJQ2OQptLvY=
+github.com/egeback/download_media_api/internal/models v0.0.0-20200622165410-818df93be324/go.mod h1:VYrmTonzHsmThtjn4NHmfmH0g46jvAV8H2mzOtzcSQU=
 github.com/gin-contrib/sse v0.1.0 h1:Y/yl/+YNO8GZSjAhjMsSuLt29uWRFHdHYUb5lYOV9qE=
 github.com/gin-contrib/sse v0.1.0/go.mod h1:RHrZQHXnP2xjPF+u1gW/2HnVO7nvIa9PG3Gm+fLHvGI=
 github.com/gin-gonic/gin v1.6.3 h1:ahKqKTFpO5KTPHxWZjEdPScmYaGtLo8Y4DMHoEsnp14=
 github.com/gin-gonic/gin v1.6.3/go.mod h1:75u5sXoLsGZoRN5Sgbi1eraJ4GU3++wFwWzhwvtwp4M=
+github.com/go-cmd/cmd v1.2.0 h1:Aohz0ZG0nQbvT4z55Mh+fdegX48GSAXL3cSsbYxRfvI=
+github.com/go-cmd/cmd v1.2.0/go.mod h1:XgKkd0L6sv9WcYV0FS8RfG1RJCSTVHTsLeAD2pTgHt0=
 github.com/go-playground/assert/v2 v2.0.1/go.mod h1:VDjEfimB/XKnb+ZQfWdccd7VUvScMdVu0Titje2rxJ4=
 github.com/go-playground/locales v0.13.0 h1:HyWk6mgj5qFqCT5fjGBuRArbVDfE4hi8+e8ceBS/t7Q=
 github.com/go-playground/locales v0.13.0/go.mod h1:taPMhCMXrRLJO55olJkUXHZBHCxTMfnGwq/HNwmWNS8=
@@ -11,6 +19,7 @@ github.com/go-playground/universal-translator v0.17.0 h1:icxd5fm+REJzpZx7ZfpaD87
 github.com/go-playground/universal-translator v0.17.0/go.mod h1:UkSxE5sNxxRwHyU+Scu5vgOQjsIJAF8j9muTVoKLVtA=
 github.com/go-playground/validator/v10 v10.2.0 h1:KgJ0snyC2R9VXYN2rneOtQcw5aHQB1Vv0sFl1UcHBOY=
 github.com/go-playground/validator/v10 v10.2.0/go.mod h1:uOYAAleCW8F/7oMFd6aG0GOhaH6EGOAJShg8Id5JGkI=
+github.com/go-test/deep v1.0.5/go.mod h1:QV8Hv/iy04NyLBxAdO9njL0iVPN1S4d/A3NVv1V36o8=
 github.com/golang/protobuf v1.3.3 h1:gyjaxf+svBWX08ZjK86iN9geUJF0H6gp2IRKX6Nf6/I=
 github.com/golang/protobuf v1.3.3/go.mod h1:vzj43D7+SQXF/4pzW/hwtAqwc6iTitCiVSaWz5lYuqw=
 github.com/google/gofuzz v1.0.0/go.mod h1:dBl0BpW6vV/+mYPU4Po3pmUjxk6FQPldtuIdl/M65Eg=

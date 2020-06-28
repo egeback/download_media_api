@@ -1,12 +1,19 @@
 package main
 
 import (
+	"context"
 	"fmt"
+	"log"
+	"net/http"
+	"os"
+	"os/signal"
+	"strings"
+	"syscall"
 	"time"
+
 	"github.com/egeback/download_media_api/internal/controllers"
-	"github.com/egeback/download_media_api/internal/version"
 	_ "github.com/egeback/download_media_api/internal/docs"
-	
+	"github.com/egeback/download_media_api/internal/version"
 
 	"github.com/gin-gonic/gin"
 	jsonp "github.com/tomwei7/gin-jsonp"
@@ -14,6 +21,8 @@ import (
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
+
+var address = ":8081"
 
 // @title Play Media API - Downloader
 // @version 1.0
@@ -39,7 +48,10 @@ func main() {
 		jobs := v1.Group("/jobs")
 		{
 			jobs.POST("", c.AddJob)
+			jobs.GET("", c.Jobs)
+			jobs.POST("/", c.AddJob)
 			jobs.GET("/", c.Jobs)
+
 			jobs.GET("/:uuid", c.GetJob)
 		}
 		common := v1.Group("/")
@@ -49,5 +61,30 @@ func main() {
 	}
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
-	r.Run(":8081")
+	srv := &http.Server{
+		Addr:    address,
+		Handler: r,
+	}
+	quit := make(chan os.Signal)
+
+	go func() {
+		// service connections
+		fmt.Printf("Listening and serving HTTP on %s\n", address)
+		if err := srv.ListenAndServe(); err != nil {
+			log.Printf("listen: %s\n", err)
+			if strings.Index(err.Error(), "address already in use") >= 0 {
+				quit <- syscall.SIGINT
+			}
+		}
+	}()
+
+	signal.Notify(quit, os.Interrupt)
+	<-quit
+	log.Println("Shutdown Server ...")
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+	if err := srv.Shutdown(ctx); err != nil {
+		log.Fatal("Server Shutdown:", err)
+	}
+	log.Println("Server exiting")
 }

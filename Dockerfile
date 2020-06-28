@@ -6,6 +6,8 @@ FROM golang:latest
 # Add Maintainer Info
 LABEL maintainer="Marky Egebäck <marky@egeback.se>"
 
+RUN apt-get update && apt-get install -y python3 python3-pip
+
 # Set the Current Working Directory inside the container
 WORKDIR /app
 

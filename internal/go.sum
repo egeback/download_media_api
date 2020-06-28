@@ -8,6 +8,7 @@ github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751 h1:JYp7IbQjafo
 github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/egeback/download_media_api/internal/actions v0.0.0-20200622165410-818df93be324/go.mod h1:uFNH7tcT4JGauPXdhZJrq0b0VfBEldV0v4I/M6y9SU4=
 github.com/egeback/play_media_api v1.0.2 h1:bowDZLbW89l5MuNAKkLFLOfRBkwB/P8D0o0P44ZmH1A=
 github.com/egeback/play_media_api/internal v0.0.0-20200620200947-c10a2d728ef8 h1:nnccDsD+/3Nl4TVAtwqQkV2MKEv9F1Fb4lSHYuAljao=
 github.com/egeback/play_media_api/internal/version v0.0.0-20200620200947-c10a2d728ef8 h1:rDEti9lzWAEBoCYVg79ma7WCGfd02zmMsKoZqYgRSfU=
@@ -103,6 +104,7 @@ github.com/ugorji/go/codec v1.1.5-pre/go.mod h1:tULtS6Gy1AE1yCENaw4Vb//HLH5njI2t
 github.com/ugorji/go/codec v1.1.7 h1:2SvQaVZ1ouYrrKKwoSk2pzd4A9evlKJb9oTL+OaLUSs=
 github.com/ugorji/go/codec v1.1.7/go.mod h1:Ax+UKWsSmolVDwsd+7N3ZtXu+yMGCf907BLYF3GoBXY=
 github.com/urfave/cli v1.20.0/go.mod h1:70zkFmudgCuE/ngEzBv17Jvp/497gISqfk5gWijbERA=
+github.com/zhashkevych/scheduler v1.0.0/go.mod h1:x9baACtHSUu78Jvzv7QytjJ9beTJUh6tCRAtYnKYh3c=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/net v0.0.0-20181005035420-146acd28ed58/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
 golang.org/x/net v0.0.0-20181220203305-927f97764cc3/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
