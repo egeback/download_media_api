@@ -12,10 +12,10 @@ replace (
 require (
 	github.com/DispatchMe/go-work v0.6.0
 	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751
-	github.com/egeback/download_media_api/internal/controllers v0.0.0-00010101000000-000000000000
-	github.com/egeback/download_media_api/internal/models v0.0.0-20200622165410-818df93be324
-	github.com/egeback/download_media_api/internal/version v0.0.0-00010101000000-000000000000
-	github.com/egeback/play_media_api/internal/version v0.0.0-20200620200947-c10a2d728ef8
+	github.com/egeback/download_media_api/internal/controllers v1.0.1
+	github.com/egeback/download_media_api/internal/models v1.0.1
+	github.com/egeback/download_media_api/internal/version v1.0.1
+	github.com/egeback/play_media_api/internal/version v1.0.1
 	github.com/garyburd/redigo v1.6.0 // indirect
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-cmd/cmd v1.2.0

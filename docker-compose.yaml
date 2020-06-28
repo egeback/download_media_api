@@ -1,10 +1,10 @@
 version: '2'
 
 services:
-  play_media_api:
+  download_media_api:
     build: .
     container_name: download_media_api
     environment:
      - GIN_MODE=release
     ports:
-     - "8081:8081"
+     - "8082:8081"
