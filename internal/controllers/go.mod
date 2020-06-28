@@ -3,10 +3,10 @@ module github.com/egeback/download_media_api/internal/controllers
 go 1.14
 
 replace (
-	github.com/egeback/download_media_api/internal/controllers => ./controllers
-	github.com/egeback/download_media_api/internal/docs => ./docs
-	github.com/egeback/download_media_api/internal/models => ./models
-	github.com/egeback/download_media_api/internal/version => ./version
+	github.com/egeback/download_media_api/internal/controllers => ../controllers
+	github.com/egeback/download_media_api/internal/docs => ../docs
+	github.com/egeback/download_media_api/internal/models => ../models
+	github.com/egeback/download_media_api/internal/version => ../version
 )
 
 require (
