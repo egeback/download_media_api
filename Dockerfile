@@ -7,7 +7,7 @@ FROM golang:latest
 LABEL maintainer="Marky Egebäck <marky@egeback.se>"
 
 RUN apt-get update && apt-get install -y python3 python3-pip
-RUN apt-get install svtplay-dl
+RUN apt-get install -y svtplay-dl
 
 # Set the Current Working Directory inside the container
 WORKDIR /app
