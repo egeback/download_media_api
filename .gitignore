@@ -21,3 +21,5 @@ src/__debug_bin
 main
 internal/__debug_bin
 download_media_api.code-workspace
+media/*
+

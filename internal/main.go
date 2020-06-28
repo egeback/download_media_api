@@ -13,6 +13,7 @@ import (
 
 	"github.com/egeback/download_media_api/internal/controllers"
 	_ "github.com/egeback/download_media_api/internal/docs"
+	"github.com/egeback/download_media_api/internal/models"
 	"github.com/egeback/download_media_api/internal/version"
 
 	"github.com/gin-gonic/gin"
@@ -38,6 +39,15 @@ var address = ":8081"
 // @BasePath /api/v1/
 func main() {
 	fmt.Printf("%s Running Play Media API - Downloader version: %s (%s)\n", time.Now().Format("2006-01-02 15:04:05"), version.BuildVersion, version.BuildTime)
+
+	svtDlLocation := os.Getenv("SVT_DL_LOCATION")
+	if svtDlLocation != "" {
+		models.SvtDLLocation = svtDlLocation
+	}
+	defaultDownloadDir := os.Getenv("DEFAULT_MEDIA_DIRECTORY")
+	if defaultDownloadDir != "" {
+		models.DefaultDownloadDir = defaultDownloadDir
+	}
 
 	r := gin.New()
 	r.Use(gin.Recovery())

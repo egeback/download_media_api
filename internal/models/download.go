@@ -10,7 +10,13 @@ import (
 
 var ticker *time.Ticker = time.NewTicker(1 * time.Second)
 
-//Downloader struct containing info regarding a executable command
+//SvtDLLocation is describing the location of SvtDL
+var SvtDLLocation = "/usr/bin/svtplay-dl"
+
+//DefaultDownloadDir specifies default location for downloadedfiles
+var DefaultDownloadDir = "/media"
+
+//Download struct containing info regarding a executable command
 type Download struct {
 	URL             string            `json:"url"`
 	Started         *time.Time        `json:"started"`
@@ -95,7 +101,7 @@ func Max(x int, y int) int {
 
 // Start to start download
 func (d *Download) Start() {
-	d.FindCmd = cmd.NewCmd("/usr/local/bin/svtplay-dl", d.URL, "--force")
+	d.FindCmd = cmd.NewCmd(SvtDLLocation, d.URL, "--force", "--output", DefaultDownloadDir)
 	d.StatusChan = d.FindCmd.Start() // non-blocking
 	d.Running = true
 	started := time.Now()
